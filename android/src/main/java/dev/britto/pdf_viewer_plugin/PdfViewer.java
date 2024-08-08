@@ -1,6 +1,6 @@
 package dev.britto.pdf_viewer_plugin;
 
-import com.github.barteksc.pdfviewer.PDFView;
+import com.github.mhiew.pdfviewer.PDFView;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -49,10 +49,10 @@ public class PdfViewer implements PlatformView, MethodCallHandler {
     private String filePath;
 
     PdfViewer(final Context context,
-              MethodChannel methodChannel,
-              Map<String, Object> params,
-              View containerView) {
-//        Log.i("PdfViewer", "init");
+            MethodChannel methodChannel,
+            Map<String, Object> params,
+            View containerView) {
+        // Log.i("PdfViewer", "init");
 
         this.methodChannel = methodChannel;
         this.methodChannel.setMethodCallHandler(this);
@@ -60,7 +60,7 @@ public class PdfViewer implements PlatformView, MethodCallHandler {
         if (!params.containsKey("filePath")) {
             return;
         }
-        filePath = (String)params.get("filePath");
+        filePath = (String) params.get("filePath");
 
         pdfView = new CustomPDFView(context, null);
         loadPdfView();
@@ -89,20 +89,19 @@ public class PdfViewer implements PlatformView, MethodCallHandler {
         return pdfView;
     }
 
-     @Override
+    @Override
     public void onFlutterViewAttached(@NonNull View flutterView) {
-//         Log.i("PdfViewer", "onFlutterViewAttached");
+        // Log.i("PdfViewer", "onFlutterViewAttached");
     }
 
     @Override
     public void onFlutterViewDetached() {
-//        Log.i("PdfViewer", "onFlutterViewDetached");
+        // Log.i("PdfViewer", "onFlutterViewDetached");
     }
-
 
     @Override
     public void dispose() {
-//        Log.i("PdfViewer", "dispose");
+        // Log.i("PdfViewer", "dispose");
         methodChannel.setMethodCallHandler(null);
     }
 }
