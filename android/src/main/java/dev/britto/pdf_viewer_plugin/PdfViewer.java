@@ -1,6 +1,6 @@
 package dev.britto.pdf_viewer_plugin;
 
-import com.github.mhiew.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.PDFView;
 
 import android.content.Context;
 import android.util.AttributeSet;
